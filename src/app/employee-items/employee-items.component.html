@@ -1,0 +1,9 @@
+<div class="card" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title">{{employeeItem.id}}</h5>
+      <h6 class="card-subtitle mb-2 text-muted">{{employeeItem.name}} | {{employeeItem.position}}</h6>
+      <p class="card-text">{{employeeItem.hire_date}}</p>
+      <a href="#" class="btn btn-danger" style="margin-right: 10px;" (click)="onDelete(employeeItem.id)">Delete</a>
+      <a href="#" class="btn btn-warning">Edit</a>
+    </div>
+  </div>

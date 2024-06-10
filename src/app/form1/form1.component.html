@@ -1,0 +1,43 @@
+<p>Employee Form</p>
+
+<form (ngSubmit)="onSubmit()" #todoForm="ngForm">
+    
+    <div class="mb-3" style="width: 50%;margin-left: 20px;">
+        <label title="Id" class="form-lable">Id</label>
+        <input type="text" class="form-control" id="Id" name="id" #id="ngModel" pattern="[A-Za-z0-9]{2,10}" required [(ngModel)]="employeeList.id"/>
+        @if (id.touched && id.invalid)
+        {
+        <div class="alert alert-danger">
+                <span *ngIf="id.errors?.['required']">Please Enter the Id.</span>
+                <span *ngIf="id.errors?.['pattern']">Please Enter Correct the Id.</span>
+            </div>
+        }
+    </div>
+    <div class="mb-3" style="width: 50%;margin-left: 20px;">
+        <label title="Name" class="form-lable">Name</label>
+        <input type="text" class="form-control" id="name" name="name" #name="ngModel" [(ngModel)]="employeeList.name"/>
+        @if (name.touched && name.invalid)
+        {
+        <div class="alert alert-danger">
+                <span *ngIf="name.errors?.['required']">Please Enter the name.</span>
+                <span *ngIf="name.errors?.['pattern']">Please Enter Correct the name.</span>
+            </div>
+        }
+    </div>
+    <div class="mb-3" style="width: 50%;margin-left: 20px;">
+        <label title="City" class="form-lable">City</label>
+        <input type="text" class="form-control" id="city" required name="city" #city="ngModel" required pattern="^[A-Za-z0-9\s]{5,20}" [(ngModel)]="employeeList.city"/>
+        {{city.errors|json}}
+        @if (city.touched && city.invalid)
+        {
+        <div class="alert alert-danger">
+                <span *ngIf="city.errors?.['required']">Please Enter the City.</span>
+                <span *ngIf="city.errors?.['pattern']">Please Enter Correct the City.</span>
+            </div>
+        }
+    </div>
+    <div class="mb-3" style="width: 50%;margin-left: 20px;">
+        <button type="submit" class="btn btn-primary" [disabled]="todoForm.invalid" >Submit</button>
+    </div>
+
+</form>

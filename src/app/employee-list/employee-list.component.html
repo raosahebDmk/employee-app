@@ -1,0 +1,11 @@
+
+<h2>Employee List</h2>
+
+<div class="row">
+@for (emplist of employeeList; track $index) {
+
+    <div class="col-sm-6 col-md-4 col-lg-4">
+        <app-employee-items [employeeItem]="emplist" (deleteItem)="onDeleteItem($event)"/>
+    </div>
+}
+</div>

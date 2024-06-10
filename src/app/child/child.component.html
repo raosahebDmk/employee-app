@@ -1,0 +1,10 @@
+
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title">{{studentList.name}}</h5>
+          <h6 class="card-subtitle mb-2 text-muted">Id | Age : {{studentList.id}} | {{studentList.age}}</h6>
+          <p class="card-text">{{studentList.grade}}</p>
+          <a href="#" class="btn btn-outline-danger" (click)="onDelete(studentList.id)">Delete</a>
+          <a href="#" style="margin-left: 50px;" class="btn card-linkbtn btn-outline-warning" >Update</a>
+        </div>
+      </div>
